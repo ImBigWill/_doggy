@@ -1,0 +1,48 @@
+// https://foundation.zurb.com/sites/docs/sass.html
+
+//---------------------------------
+// Grid
+//---------------------------------
+.grid-container {
+	max-width: 960px;
+}
+
+//---------------------------------
+// Hero
+//---------------------------------
+.hero {
+	min-height: 500px;
+
+	&__content {
+
+	}
+
+	&__title {
+
+		&--big {
+
+		}
+	}
+
+	&__text {
+
+	}
+
+	&__button {
+
+		&--clear {
+
+		}
+
+	}
+
+} // .hero
+
+//---------------------------------
+// Helpers
+//---------------------------------
+.image-as-background {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+} // .image-as-background
