@@ -5,37 +5,80 @@
 //---------------------------------
 .grid-container {
 	max-width: 960px;
-}
+	padding: 0;
+} // .grid-container
+
+//---------------------------------
+// Header
+//---------------------------------
+.header {
+	margin-bottom: 150px;
+} // .header 
+
+//---------------------------------
+// Navigation
+//---------------------------------
+.menu {
+
+	a {
+		color: $white;
+		font-size: 14px;
+	} // a
+} // .menu
 
 //---------------------------------
 // Hero
 //---------------------------------
-.hero {
-	min-height: 500px;
+.hero.full {
+	color: $white;
+	padding-top: 40px;
+	margin-bottom: 50px;
+
+	@include breakpoint(medium) {
+		min-height: 500px;
+		margin-bottom: 50px;
+	}
+
+	@include breakpoint(large) {
+		margin-bottom: 75px;
+	}
+
+	@include breakpoint(xlarge) {
+		margin-bottom: 150px;
+	}
 
 	&__content {
 
-	}
+	} // &__content
 
 	&__title {
 
 		&--big {
-
-		}
-	}
+			font-size: 74px;
+			line-height: 1.2973;
+			margin-bottom: 25px;
+		} // &--big
+	} // &__title 
 
 	&__text {
-
-	}
+		font-size: 24px;
+		margin-bottom: 90px;
+	} // &__text
 
 	&__button {
+		border-radius: 100px;
+		padding: 19px 45px;
+
+		&--small {
+			padding: 12px 25px;
+		} // &--small
 
 		&--clear {
-
-		}
-
-	}
-
+			background: transparent;
+			border: 1px solid $white;
+			margin-left: 30px;
+		} // &--clear
+	} // &__button 
 } // .hero
 
 //---------------------------------
@@ -46,3 +89,24 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 } // .image-as-background
+
+//---------------------------------
+// 50/50 block
+//---------------------------------
+.fifty-fifty {
+
+	@include breakpoint(medium) {
+		margin-bottom: 55px;
+	}
+
+	h2 {
+
+		&::before {
+			border-top: 4px solid #3498DB;
+			content: '';
+			display: block;
+			margin: 0;
+			width: 77px;
+		}
+	}
+}
