@@ -13,7 +13,7 @@
 //---------------------------------
 .header {
 	margin-bottom: 150px;
-} // .header 
+} // .header
 
 //---------------------------------
 // Navigation
@@ -29,22 +29,12 @@
 //---------------------------------
 // Hero
 //---------------------------------
-.hero.full {
+.hero {
 	color: $white;
 	padding-top: 40px;
-	margin-bottom: 50px;
 
 	@include breakpoint(medium) {
-		min-height: 500px;
-		margin-bottom: 50px;
-	}
-
-	@include breakpoint(large) {
-		margin-bottom: 75px;
-	}
-
-	@include breakpoint(xlarge) {
-		margin-bottom: 150px;
+		height: 950px;
 	}
 
 	&__content {
@@ -76,10 +66,34 @@
 		&--clear {
 			background: transparent;
 			border: 1px solid $white;
-			margin-left: 30px;
 		} // &--clear
-	} // &__button 
+	} // &__button
+
+	.button-group .button {
+		margin-right: 30px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 } // .hero
+
+.hero.full {
+	margin-bottom: 50px;
+
+	@include breakpoint(medium) {
+		min-height: 500px;
+		margin-bottom: 50px;
+	}
+
+	@include breakpoint(large) {
+		margin-bottom: 75px;
+	}
+
+	@include breakpoint(xlarge) {
+		margin-bottom: 150px;
+	}
+}
 
 //---------------------------------
 // Helpers
@@ -109,4 +123,12 @@
 			width: 77px;
 		}
 	}
+}
+
+//---------------------------------
+// Carousel
+//---------------------------------
+
+.orbit-bullets {
+	bottom: 91px;
 }
