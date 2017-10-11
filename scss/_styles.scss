@@ -21,7 +21,11 @@
 // Header
 //---------------------------------
 .header {
-	margin-bottom: 150px;
+	margin-bottom: 90px;
+
+	@include breakpoint(large) {
+		margin-bottom: 150px;
+	}
 } // .header
 
 .brand {
@@ -120,17 +124,29 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 			color: $white;
 			font-size: 34px;
 			line-height: 1.2973;
-			margin-bottom: 25px;
+			margin-bottom: 20px;
+			text-align: center;
 
-			@include breakpoint(large) {
+			@include breakpoint(medium) {
 				font-size: 74px;
+				margin-bottom: 25px;
+				text-align: left;
 			}
 		} // &--big
 	} // &__title
 
 	&__text {
 		font-size: 24px;
-		margin-bottom: 90px;
+		margin-bottom: 110px;
+		text-align: center;
+
+		@include breakpoint(medium) {
+			text-align: left;
+		}
+
+		@include breakpoint(large) {
+			margin-bottom: 90px;
+		}
 	} // &__text
 
 	&__button {
@@ -148,26 +164,40 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 	} // &__button
 
 	// Button adjustments that aren't in _settings.scss.
-	.button-group .button {
-		margin-right: 30px;
+	.button-group {
+		flex-direction: column;
 
-		&:last-child {
-			margin-right: 0;
-		} // &:last-child 
-	} // .button-group .button
+		@include breakpoint(medium) {
+			flex-direction: row;
+		}
+
+		.button {
+			margin-bottom: 25px;
+
+			@include breakpoint(medium) {
+				margin-bottom: inherit;
+				margin-right: 30px;
+
+				&:last-child {
+					margin-right: 0;
+				} // &:last-child
+			} // @include breakpoint(medium) {
+		} // .button
+	} // .button-group
 } // .hero
 
 // Overrides that do what we need but don't affect break code above.
 .hero.full {
 	margin-bottom: 50px;
+	min-height: 765px;
 
 	@include breakpoint(medium) {
-		min-height: 500px;
 		margin-bottom: 50px;
 	}
 
 	@include breakpoint(large) {
 		margin-bottom: 75px;
+		min-height: 950px;
 	}
 
 	@include breakpoint(xlarge) {
@@ -192,9 +222,18 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 
 // Class along size grid-container.
 .fifty-fifty {
+	margin-bottom: 65px;
 
 	@include breakpoint(medium) {
 		margin-bottom: 55px;
+	}
+
+	.flipped {
+		order: 4;
+
+		@include breakpoint(medium) {
+			order: 0;
+		}
 	}
 
 	// H2's top border in 50/50 sections.
@@ -204,8 +243,12 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 			border-top: 4px solid #3498DB;
 			content: '';
 			display: block;
-			margin-top: 50px;
+			margin-top: 10px;
 			width: 77px;
+
+			@include breakpoint(medium) {
+				margin-top: 50px;
+			}
 		} // &::before
 	} // h2
 } // .fifty-fifty
