@@ -277,7 +277,15 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 
 // The bullets for styling of orbit slider.
 .orbit-bullets {
-	bottom: 91px;
+	bottom: 54px;
+
+	@include breakpoint(medium) {
+		bottom: 64px;
+	}
+
+	@include breakpoint(large) {
+		bottom: 91px;
+	}
 
 	// The active slide button size not a setting in _settings.scss.
 	button.is-active {
@@ -304,6 +312,33 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 	} // p
 } // .orbit-caption
 
+.orbit-previous,
+.orbit-next {
+	opacity: 0;
+} // .orbit-previous, .orbit-next
+
+.orbit-wrapper:hover .orbit-previous,
+.orbit-wrapper:hover .orbit-next,
+.orbit-previous:focus,
+.orbit-next:focus {
+	opacity: 1;
+} // .orbit-wrapper:hover .orbit-previous, .orbit-wrapper:hover .orbit-next, .orbit-previous:focus, .orbit-next:focus
+
+//---------------------------------
+// Card Grid Section
+//---------------------------------
+
+.card-grid {
+	.card {
+		margin: 0 auto 25px;
+		max-width: 300px;
+
+		@include breakpoint(medium) {
+			margin-bottom: 1rem;
+		}
+	}
+} // .card-grid
+
 //---------------------------------
 // Footer
 //---------------------------------
@@ -312,6 +347,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 .footer__primary {
 	background: $smoke;
 	padding: 61px $global-padding;
+	text-align: center;
 
 	@include breakpoint(large) {
 		padding: 112px 0;
@@ -323,15 +359,27 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 
 	// The input field.
 	.input-group-field {
-		border-radius: 100px 0 0 100px;
+		border-radius: 100px;
+		margin-bottom: 20px;
 		padding: 24px 30px;
 		position: relative;
-		transform: translateX(0.5rem);
+
+
+		@include breakpoint(medium) {
+			border-radius: 100px 0 0 100px;
+			margin-bottom: 0;
+			transform: translateX(0.5rem);
+		}
 	} // .input-group-field 
 
 	// The wrapper for field and button.
 	.input-group {
+		flex-direction: column;
 		margin-bottom: 0;
+
+		@include breakpoint(medium) {
+			flex-direction: row;
+		}
 
 		@include breakpoint(large) {
 			height: 73px;
@@ -339,24 +387,47 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 
 		// The submit button.
 		.button {
-			border-radius: 0 100px 100px 0;
+			border-radius: 100px;
+			height: 73px;
 			position: relative;
-			transform: translateX(-0.5rem);
-			min-width: 131px;
+			width: 100%;
+
+			@include breakpoint(medium) {
+				border-radius: 0 100px 100px 0;
+				height: inherit;
+				min-width: 131px;
+				transform: translateX(-0.5rem);
+			}
 		} // .button
 	} // .input-group
 } // .footer__signup
 
 // The Wrapper around copyright and logo.
 .footer__secondary {
-	padding: 20px $global-padding;
+	padding: 50px rem-calc(40);
 
 	@include breakpoint(large) {
 		padding: 40px 0;
+	}
+
+	.grid-x {
+		display: flex;
+		flex-direction: column;
+		min-height: 110px;
+
+		@include breakpoint(medium) {
+			flex-direction: row;
+			min-height: inherit;
+		}
 	}
 } // .footer__secondary
 
 // The copyright text.
 .footer__copyright {
-	text-align: right;
+	display: flex;
+	text-align: center;
+
+	@include breakpoint(medium) {
+		text-align: right;
+	}
 } // .footer__copyright
