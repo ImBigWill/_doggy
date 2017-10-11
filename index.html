@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Foundation for Sites</title>
 	<link rel="stylesheet" href="css/app.css">
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Droid+Serif" rel="stylesheet">
 </head>
 
 <body>
@@ -215,7 +216,7 @@
 
 					<h2 class="hero__title--big">They’re good dogs, Brent</h2>
 
-					<p class="hero__text">The only Legit Source for Professional Dog Ratings on the web.</p>
+					<p class="hero__text">The only <em>Legit</em> Source for Professional Dog Ratings on the web.</p>
 
 					<div class="grid-x button-group large">
 						<a href="#" class="button hero__button">Get your rating</a>
@@ -227,7 +228,7 @@
 	</section>
 
 	<section class="grid-container fifty-fifty">
-		<div class="grid-x grid-margin-x align-middle">
+		<div class="grid-x grid-margin-x">
 			<div class="cell medium-6">
 				<h2>Rating all the doggos</h2>
 				<p>Doggos, puppers, fur babies–we do not descriminate. View our <a href="#">manifesto</a> for more information on our rating system.</p>
@@ -270,7 +271,7 @@
 						<img class="orbit-image" src="assets/slide-2.jpg" alt="dog2">
 					</figure>
 				</li>
-				<li class="orbit-slide">
+				<li class="is-active orbit-slide">
 					<figure class="orbit-figure">
 						<img class="orbit-image" src="assets/slide-3.jpg" alt="Space">
 					</figure>
@@ -281,55 +282,56 @@
 					</figure>
 				</li>
 			</ul>
+			<nav class="orbit-bullets grid-x align-middle align-center">
+				<button data-slide="0">
+					<span class="show-for-sr">First slide details.</span>
+					<span class="show-for-sr">Current Slide</span>
+				</button>
+				<button data-slide="1">
+					<span class="show-for-sr">Second slide details.</span>
+				</button>
+				<button class="is-active" data-slide="2">
+					<span class="show-for-sr">Third slide details.</span>
+				</button>
+				<button data-slide="3">
+					<span class="show-for-sr">Fourth slide details.</span>
+				</button>
+			</nav>
 		</section>
-		<nav class="orbit-bullets">
-			<button data-slide="0">
-				<span class="show-for-sr">First slide details.</span>
-				<span class="show-for-sr">Current Slide</span>
-			</button>
-			<button data-slide="1">
-				<span class="show-for-sr">Second slide details.</span>
-			</button>
-			<button class="is-active" data-slide="2">
-				<span class="show-for-sr">Third slide details.</span>
-			</button>
-			<button data-slide="3">
-				<span class="show-for-sr">Fourth slide details.</span>
-			</button>
-		</nav>
+
 
 		<div class="grid-container">
 			<div class="grid-x grid-padding-x small-up-2 medium-up-3">
-				<div class="cell">
+				<div class="cell flex-container">
 					<div class="card">
 						<div class="card-image">
 							<img src="assets/boudreaux.jpg">
 						</div>
 						<div class="card-section">
-							<h4>This is a row of cards.</h4>
-							<p>This row of cards is embedded in an X-Y Block Grid.</p>
+							<h4>Bubbles, 13/10</h4>
+							<p>She's never had a bath. Seems ok with that. Background pup is also a star. 13/10 would give the world to Bubbles</p>
 						</div>
 					</div>
 				</div>
-				<div class="cell">
+				<div class="cell flex-container">
 					<div class="card">
 						<div class="card-image">
 							<img src="assets/bubbles.jpg">
 						</div>
 						<div class="card-section">
-							<h4>This is a card.</h4>
-							<p>It has an easy to override visual style, and is appropriately subdued.</p>
+							<h4>Boudreaux, 13/10</h4>
+							<p>This is Boudreaux. He is an elder doggo. H*ckin wise for sure. Seen here pondering the nature of goodboyness. 13/10 #seniorpupsaturdays</p>
 						</div>
 					</div>
 				</div>
-				<div class="cell">
+				<div class="cell flex-container">
 					<div class="card">
 						<div class="card-image">
 							<img src="assets/frida.jpg">
 						</div>
 						<div class="card-section">
-							<h4>This is a card.</h4>
-							<p>It has an easy to override visual style, and is appropriately subdued.</p>
+							<h4>Frida, 14/10</h4>
+							<p>Meet Frida. She's in the search & rescue division of the Mexican Navy along with two German shepherds. Sadly, she's been busy lately. 14/10</p>
 						</div>
 					</div>
 				</div>
