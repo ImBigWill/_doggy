@@ -8,6 +8,13 @@
 	@include breakpoint(large) {
 		padding: 0;
 	}
+
+	// The section with 3 cards.
+	&.card-grid {
+		@include breakpoint(large) {
+			margin-bottom: 84px; // 16px more comes from cards on by default for stacking.
+		}
+	} // .card-grid
 } // .grid-container
 
 //---------------------------------
@@ -16,6 +23,10 @@
 .header {
 	margin-bottom: 150px;
 } // .header
+
+.brand {
+	margin-bottom: 0;
+}
 
 //---------------------------------
 // Navigation
@@ -28,6 +39,64 @@
 		line-height: 1.1875;
 	} // a
 } // .menu
+
+//---------------------------------
+// Mobile Nav
+//---------------------------------
+$offcanvas-full-screen-bg: $primary-color;
+$offcanvas-full-screen-side: left;
+$offcanvas-full-screen-closebutton-size: 5rem;
+
+.offcanvas-full-screen {
+	@include off-canvas-base($background: $offcanvas-full-screen-bg, $transition: 0.3s ease-in-out);
+	@include off-canvas-position($position: $offcanvas-full-screen-side);
+
+	width: 100%;
+}
+
+.offcanvas-full-screen-inner {
+	padding: 16px;
+	text-align: center;
+}
+
+.offcanvas-full-screen-menu {
+	@include menu-base;
+	@include menu-direction(vertical);
+
+	a {
+		color: $white;
+		font-size: 24px;
+
+		&:hover {
+			color: darken($white, 30%);
+		}
+	}
+}
+
+.offcanvas-full-screen-close {
+	color: $white;
+	font-size: $offcanvas-full-screen-closebutton-size;
+
+	&:hover {
+		color: darken($white, 30%);
+	}
+}
+
+.off-canvas-content {
+	display: flex;
+
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+
+.main-nav {
+	display: none;
+
+	@include breakpoint(medium) {
+		display: block;
+	}
+}
 
 //---------------------------------
 // Hero
@@ -49,11 +118,15 @@
 
 		&--big {
 			color: $white;
-			font-size: 74px;
+			font-size: 34px;
 			line-height: 1.2973;
 			margin-bottom: 25px;
+
+			@include breakpoint(large) {
+				font-size: 74px;
+			}
 		} // &--big
-	} // &__title 
+	} // &__title
 
 	&__text {
 		font-size: 24px;
@@ -74,15 +147,17 @@
 		} // &--clear
 	} // &__button
 
+	// Button adjustments that aren't in _settings.scss.
 	.button-group .button {
 		margin-right: 30px;
 
 		&:last-child {
 			margin-right: 0;
-		}
-	}
+		} // &:last-child 
+	} // .button-group .button
 } // .hero
 
+// Overrides that do what we need but don't affect break code above.
 .hero.full {
 	margin-bottom: 50px;
 
@@ -98,11 +173,13 @@
 	@include breakpoint(xlarge) {
 		margin-bottom: 100px;
 	}
-}
+} // .hero.full
 
 //---------------------------------
 // Helpers
 //---------------------------------
+
+// Image as a background class.
 .image-as-background {
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -112,12 +189,15 @@
 //---------------------------------
 // 50/50 block
 //---------------------------------
+
+// Class along size grid-container.
 .fifty-fifty {
 
 	@include breakpoint(medium) {
 		margin-bottom: 55px;
 	}
 
+	// H2's top border in 50/50 sections.
 	h2 {
 
 		&::before {
@@ -126,47 +206,114 @@
 			display: block;
 			margin-top: 50px;
 			width: 77px;
-		}
-	}
-}
+		} // &::before
+	} // h2
+} // .fifty-fifty
 
 //---------------------------------
-// Carousel
+// Carousel (Orbit)
 //---------------------------------
 
+// The main wrapper for the slider.
 .orbit {
 
 	@include breakpoint(large) {
+		margin-bottom: 100px;
 		margin-top: 120px;
+		max-height: 658px;
 	}
-}
+} // .orbit
 
+// The slide class on the li's.
 .orbit-slide {
+
 	@include breakpoint(large) {
 		max-height: 658px;
 	}
-}
+} // .orbit-slide
 
+// The bullets for styling of orbit slider.
 .orbit-bullets {
 	bottom: 91px;
 
+	// The active slide button size not a setting in _settings.scss.
 	button.is-active {
 		height: 16px;
 		width: 16px;
-	}
-}
+	} // button.is-active
+} //.orbit-bullets
 
+// The orbit slider caption positioning.
 .orbit-caption {
 	bottom: 72%;
 	color: $white;
 	text-align: center;
 	transform: translateY(72%);
 
+	// Styling for header title of slide.
 	h2 {
 		color: $white;
-	}
+	} // h2
 
+	// Styling of subtext on slider.
 	p {
 		font-size: 24px;
+	} // p
+} // .orbit-caption
+
+//---------------------------------
+// Footer
+//---------------------------------
+
+// The top section of the footer which has email signup.
+.footer__primary {
+	background: $smoke;
+	padding: 61px $global-padding;
+
+	@include breakpoint(large) {
+		padding: 112px 0;
 	}
-}
+} // .footer__primary
+
+// The email signup portion of the top seciton of footer.
+.footer__signup {
+
+	// The input field.
+	.input-group-field {
+		border-radius: 100px 0 0 100px;
+		padding: 24px 30px;
+		position: relative;
+		transform: translateX(0.5rem);
+	} // .input-group-field 
+
+	// The wrapper for field and button.
+	.input-group {
+		margin-bottom: 0;
+
+		@include breakpoint(large) {
+			height: 73px;
+		}
+
+		// The submit button.
+		.button {
+			border-radius: 0 100px 100px 0;
+			position: relative;
+			transform: translateX(-0.5rem);
+			min-width: 131px;
+		} // .button
+	} // .input-group
+} // .footer__signup
+
+// The Wrapper around copyright and logo.
+.footer__secondary {
+	padding: 20px $global-padding;
+
+	@include breakpoint(large) {
+		padding: 40px 0;
+	}
+} // .footer__secondary
+
+// The copyright text.
+.footer__copyright {
+	text-align: right;
+} // .footer__copyright

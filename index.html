@@ -191,24 +191,71 @@
 	</div>
 
 	<section class="grid-container full hero image-as-background" style="background-image: url('assets/hero.jpg');">
-		<header class="grid-container header">
-			<div class="grid-x align-middle">
-				<div class="cell shrink">
-					<a class="logo" href="#">
-						<img src="assets/logo@2x.svg" />
-					</a>
+		<div class="grid-container header">
+			<div class="grid-x align-middle align-justify">
+				<h1 class="brand">
+					<div class="cell shrink">
+						<a class="logo" href="#">
+							<img src="assets/logo@2x.svg" />
+						</a>
+					</div>
+				</h1>
+
+				<div id="offcanvas-full-screen" class="offcanvas-full-screen" data-off-canvas data-transition="overlap">
+					<div class="offcanvas-full-screen-inner">
+						<button class="offcanvas-full-screen-close" aria-label="Close menu" type="button" data-close>
+							<span aria-hidden="true">&times;</span>
+						</button>
+
+						<ul class="offcanvas-full-screen-menu">
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#">About</a>
+							</li>
+							<li>
+								<a href="#">Blog</a>
+							</li>
+							<li>
+								<a href="#">Contact</a>
+							</li>
+							<li>
+								<a href="#" class="button hero__button hero__button--small">Rate Dog</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<div class="cell auto">
+
+				<div class="off-canvas-content" data-off-canvas-content>
+					<div class="top-bar">
+						<div class="top-bar-right">
+							<button class="menu-icon" type="button" data-toggle="offcanvas-full-screen"></button>
+						</div>
+					</div>
+				</div>
+
+				<div class="cell auto main-nav">
 					<ul class="menu align-right">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#" class="button hero__button hero__button--small">Rate Dog</a></li>
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">About</a>
+						</li>
+						<li>
+							<a href="#">Blog</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
+						<li>
+							<a href="#" class="button hero__button hero__button--small">Rate Dog</a>
+						</li>
 					</ul>
 				</div>
 			</div>
-		</header>
+		</div>
 
 		<div class="grid-container">
 			<div class="grid-x">
@@ -216,7 +263,8 @@
 
 					<h2 class="hero__title--big">They’re good dogs, Brent</h2>
 
-					<p class="hero__text">The only <em>Legit</em> Source for Professional Dog Ratings on the web.</p>
+					<p class="hero__text">The only
+						<em>Legit</em> Source for Professional Dog Ratings on the web.</p>
 
 					<div class="grid-x button-group large">
 						<a href="#" class="button hero__button">Get your rating</a>
@@ -231,7 +279,8 @@
 		<div class="grid-x grid-margin-x">
 			<div class="cell medium-6">
 				<h2>Rating all the doggos</h2>
-				<p>Doggos, puppers, fur babies–we do not descriminate. View our <a href="#">manifesto</a> for more information on our rating system.</p>
+				<p>Doggos, puppers, fur babies–we do not descriminate. View our
+					<a href="#">manifesto</a> for more information on our rating system.</p>
 			</div>
 			<div class="cell medium-6">
 				<img src="assets/image-stack-1.png" />
@@ -245,8 +294,8 @@
 				<img src="assets/image-stack-2.png" />
 			</div>
 			<div class="cell medium-6">
-					<h2>Fast ratings, bucko</h2>
-					<p>Dogs live life fast and full, so our ratings are fast, too. Most ratings complete within 30 seconds or less.</p>
+				<h2>Fast ratings, bucko</h2>
+				<p>Dogs live life fast and full, so our ratings are fast, too. Most ratings complete within 30 seconds or less.</p>
 			</div>
 		</div>
 	</section>
@@ -286,7 +335,7 @@
 				</li>
 			</ul>
 			<nav class="orbit-bullets grid-x align-middle align-center">
-				<button  class="is-active" data-slide="0">
+				<button class="is-active" data-slide="0">
 					<span class="show-for-sr">First slide details.</span>
 					<span class="show-for-sr">Current Slide</span>
 				</button>
@@ -300,46 +349,88 @@
 					<span class="show-for-sr">Fourth slide details.</span>
 				</button>
 			</nav>
-		</section>
+	</section>
 
 
-		<div class="grid-container">
-			<div class="grid-x grid-padding-x small-up-2 medium-up-3">
-				<div class="cell flex-container">
-					<div class="card">
-						<div class="card-image">
-							<img src="assets/boudreaux.jpg">
-						</div>
-						<div class="card-section">
-							<h4>Bubbles, 13/10</h4>
-							<p>She's never had a bath. Seems ok with that. Background pup is also a star. 13/10 would give the world to Bubbles</p>
-						</div>
+	<section class="grid-container card-grid">
+		<div class="grid-x grid-padding-x small-up-2 medium-up-3">
+			<div class="cell flex-container">
+				<div class="card">
+					<div class="card-image">
+						<img src="assets/boudreaux.jpg">
+					</div>
+					<div class="card-section">
+						<h4>Bubbles, 13/10</h4>
+						<p>She's never had a bath. Seems ok with that. Background pup is also a star. 13/10 would give the world to Bubbles</p>
 					</div>
 				</div>
-				<div class="cell flex-container">
-					<div class="card">
-						<div class="card-image">
-							<img src="assets/bubbles.jpg">
-						</div>
-						<div class="card-section">
-							<h4>Boudreaux, 13/10</h4>
-							<p>This is Boudreaux. He is an elder doggo. H*ckin wise for sure. Seen here pondering the nature of goodboyness. 13/10 #seniorpupsaturdays</p>
-						</div>
+			</div>
+			<div class="cell flex-container">
+				<div class="card">
+					<div class="card-image">
+						<img src="assets/bubbles.jpg">
+					</div>
+					<div class="card-section">
+						<h4>Boudreaux, 13/10</h4>
+						<p>This is Boudreaux. He is an elder doggo. H*ckin wise for sure. Seen here pondering the nature of goodboyness. 13/10
+							#seniorpupsaturdays</p>
 					</div>
 				</div>
-				<div class="cell flex-container">
-					<div class="card">
-						<div class="card-image">
-							<img src="assets/frida.jpg">
-						</div>
-						<div class="card-section">
-							<h4>Frida, 14/10</h4>
-							<p>Meet Frida. She's in the search & rescue division of the Mexican Navy along with two German shepherds. Sadly, she's been busy lately. 14/10</p>
-						</div>
+			</div>
+			<div class="cell flex-container">
+				<div class="card">
+					<div class="card-image">
+						<img src="assets/frida.jpg">
+					</div>
+					<div class="card-section">
+						<h4>Frida, 14/10</h4>
+						<p>Meet Frida. She's in the search & rescue division of the Mexican Navy along with two German shepherds. Sadly, she's
+							been busy lately. 14/10</p>
 					</div>
 				</div>
 			</div>
 		</div>
+	</section>
+	<footer class="footer__block">
+		<div class="full footer__primary">
+			<div class="grid-container">
+				<div class="grid-x grid-margin-x align-middle">
+					<div class="cell medium-6">
+						<h2>Want more dogs?</h2>
+						<p>Simply sign up with but the click of a mouse, my dear boy!</p>
+					</div>
+					<div class="cell medium-6 footer__signup">
+						<form action="">
+							<div class="input-group">
+								<input class="input-group-field" type="email" placeholder="Your email address">
+								<div class="input-group-button">
+									<input type="submit" class="button" value="Submit">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid-container footer__secondary">
+			<div class="grid-x align-middle">
+				<div class="cell shrink">
+					<a class="logo" href="#">
+						<img src="assets/logo-color@2x.svg">
+					</a>
+					<!-- .logo -->
+				</div>
+				<!-- .cell -->
+
+				<div class="footer__copyright cell auto align-right">
+					© WeRateDogs.io. No cats harmed in the making of this website.
+				</div>
+				<!-- .cell .shrink -->
+			</div>
+			<!-- .grid-x .align-middle-->
+		</div>
+	</footer>
 	</div>
 
 	<script src="bower_components/jquery/dist/jquery.js"></script>
