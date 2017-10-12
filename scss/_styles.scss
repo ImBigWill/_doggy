@@ -32,6 +32,16 @@
 	margin-bottom: 0;
 }
 
+.logo {
+
+	&:hover,
+	&:active,
+	&:focus {
+		opacity: 0.7;
+		transition: opacity 0.4s ease-in-out;
+	}
+}
+
 //---------------------------------
 // Navigation
 //---------------------------------
@@ -120,12 +130,9 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 //---------------------------------
 .hero {
 	color: $white;
+	height: 100vh;
 	padding-top: 40px;
 
-
-	@include breakpoint(medium) {
-		height: 950px;
-	}
 
 	&__content {
 
@@ -230,7 +237,6 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 
 	@include breakpoint(large) {
 		margin-bottom: 75px;
-		min-height: 950px;
 	}
 
 	@include breakpoint(xlarge) {
@@ -244,7 +250,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 
 // Image as a background class.
 .image-as-background {
-	background-position: center center;
+	background-position: 75% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
 } // .image-as-background
@@ -397,6 +403,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 	// The input field.
 	.input-group-field {
 		border-radius: 100px;
+		line-height: 1;
 		margin-bottom: 20px;
 		padding: 24px 30px;
 		position: relative;
