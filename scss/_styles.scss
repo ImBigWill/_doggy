@@ -559,7 +559,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 .footer__secondary {
 	padding: 50px rem-calc(40);
 
-	@include breakpoint(large) {
+	@include breakpoint(ml) {
 		padding: 40px 0;
 	}
 
@@ -568,7 +568,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 		flex-direction: column;
 		min-height: 110px;
 
-		@include breakpoint(medium) {
+		@include breakpoint(ml) {
 			flex-direction: row;
 			min-height: inherit;
 		}
@@ -580,7 +580,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 	display: flex;
 	text-align: center;
 
-	@include breakpoint(medium) {
+	@include breakpoint(ml) {
 		text-align: right;
 	}
 } // .footer__copyright
