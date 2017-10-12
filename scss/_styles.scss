@@ -103,7 +103,7 @@ $menu-fancy-spacing: 10px;
 	}
 
 	.menu-fancy-option1 a:hover {
-		color: $primary-color
+		color: $primary-color;
 	}
 
 	.menu-fancy-option1:after,
@@ -155,13 +155,14 @@ $menu-fancy-spacing: 10px;
 	a {
 		color: $white;
 		font-size: 16px;
+		font-weight: 600; // I know its 400 I just wanted to beef it up to see fancy hovers better.
 		line-height: 1.1875;
 
 		&:active:not(.button),
 		&:focus:not(.button),
 		&:hover:not(.button){
 			opacity: 0.7;
-			transition: opacity 0.25s ease-in-out;
+			transition: color, 0.25s ease-in-out, opacity 0.25s ease-in-out;
 		}
 	} // a
 } // .menu
@@ -304,10 +305,10 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 			&:active,
 			&:focus,
 			&:hover {
-				background: transparent;
+				background: lighten($primary-color, 6%);
 				border: 1px solid $primary-color;
-				opacity: 1;
-				transition: border 0.25s ease-in-out;
+				opacity: 0.9;
+				transition: background 0.40s ease-in-out,border 0.25s ease-in-out;
 			}
 		} // &--clear
 	} // &__button
