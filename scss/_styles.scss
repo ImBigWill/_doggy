@@ -43,6 +43,111 @@
 }
 
 //---------------------------------
+// "Fancy Nav"
+//---------------------------------
+$menu-fancy-spacing: 10px;
+
+.menu-fancy {
+	li {
+		margin: 0 2px;
+		position: relative;
+
+		@include breakpoint(ml) {
+			margin: 0 $menu-fancy-spacing;
+		}
+	}
+
+	li:after,
+	li:before,
+	a:before,
+	a:after {
+		border-radius: 4px;
+		content: '';
+		position: absolute;
+	}
+
+	li:after,
+	li:before {
+		bottom: -4px;
+		height: 4px;
+	}
+
+	li:not(.is-selected):before {
+		left: 0;
+		right: -2px;
+	}
+
+	li.is-selected:after {
+		left: 0;
+		right: 39px;
+	}
+
+	li.is-selected:before {
+		right: -2px;
+		width: 13px;
+	}
+
+	.is-selected a:before {
+		bottom: -22px;
+		height: 22px;
+		right: 7px;
+		width: 4px;
+	}
+
+	.is-selected a:after {
+		bottom: -13px;
+		height: 4px;
+		right: 5px;
+		transform: rotate(30deg);
+		width: 40px;
+	}
+
+	.menu-fancy-option1 a:hover {
+		color: $primary-color
+	}
+
+	.menu-fancy-option1:after,
+	.menu-fancy-option1:before,
+	.menu-fancy-option1 a:after,
+	.menu-fancy-option1 a:before {
+		background-color: $primary-color;
+	}
+
+	.menu-fancy-option2 a:hover {
+		color: lighten($primary-color, 5%);
+	}
+
+	.menu-fancy-option2:after,
+	.menu-fancy-option2:before,
+	.menu-fancy-option2 a:after,
+	.menu-fancy-option2 a:before {
+		background-color: lighten($primary-color, 5%);
+	}
+
+	.menu-fancy-option3 a:hover {
+		color: lighten($primary-color, 10%);
+	}
+
+	.menu-fancy-option3:after,
+	.menu-fancy-option3:before,
+	.menu-fancy-option3 a:after,
+	.menu-fancy-option3 a:before {
+		background-color: lighten($primary-color, 10%);
+	}
+
+	.menu-fancy-option4 a:hover {
+		color: lighten($primary-color, 15%);
+	}
+
+	.menu-fancy-option4:after,
+	.menu-fancy-option4:before,
+	.menu-fancy-option4 a:after,
+	.menu-fancy-option4 a:before {
+		background-color: lighten($primary-color, 15%);
+	}
+}
+
+//---------------------------------
 // Navigation
 //---------------------------------
 .menu {
@@ -73,6 +178,10 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 	@include off-canvas-position($position: $offcanvas-full-screen-side);
 
 	width: 100%;
+
+	@include breakpoint(medium) {
+		width: 100%; // overrides defaults
+	}
 }
 
 .offcanvas-full-screen-inner {
@@ -112,7 +221,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 .off-canvas-content {
 	display: flex;
 
-	@include breakpoint(medium) {
+	@include breakpoint(ml) {
 		display: none;
 	}
 }
@@ -120,7 +229,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 .main-nav {
 	display: none;
 
-	@include breakpoint(medium) {
+	@include breakpoint(ml) {
 		display: block;
 	}
 }
