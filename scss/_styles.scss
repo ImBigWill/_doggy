@@ -131,7 +131,7 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 .hero {
 	color: $white;
 	height: 100vh;
-	padding-top: 40px;
+	padding-top: 10px;
 
 
 	&__content {
@@ -229,7 +229,6 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 // Overrides that do what we need but don't affect break code above.
 .hero.full {
 	margin-bottom: 50px;
-	min-height: 765px;
 
 	@include breakpoint(medium) {
 		margin-bottom: 50px;
