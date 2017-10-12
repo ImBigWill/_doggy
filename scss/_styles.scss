@@ -41,6 +41,13 @@
 		color: $white;
 		font-size: 16px;
 		line-height: 1.1875;
+
+		&:active:not(.button),
+		&:focus:not(.button),
+		&:hover:not(.button){
+			opacity: 0.7;
+			transition: opacity 0.25s ease-in-out;
+		}
 	} // a
 } // .menu
 
@@ -72,7 +79,11 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 		font-size: 24px;
 
 		&:hover {
-			color: darken($white, 30%);
+			background: darken($primary-color, 20%);
+			border-radius: 100px;
+			color: darken($white, 20%);
+			opacity: 0.7;
+			transition: opacity 0.25s ease-in-out, background 0.25s ease-in-out;
 		}
 	}
 }
@@ -82,7 +93,9 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 	font-size: $offcanvas-full-screen-closebutton-size;
 
 	&:hover {
-		color: darken($white, 30%);
+		color: darken($white, 20%);
+		opacity: 0.7;
+		transition: opacity 0.25s ease-in-out,
 	}
 }
 
@@ -154,12 +167,32 @@ $offcanvas-full-screen-closebutton-size: 5rem;
 		padding: 19px 45px;
 
 		&--small {
+			background: darken($primary-color, 10%);
 			padding: 12px 25px;
+
+			@include breakpoint(medium) {
+				background: $primary-color;
+			}
+
+			&:active,
+			&:focus,
+			&:hover {
+				opacity: 1;
+			}
 		} // &--small
 
 		&--clear {
 			background: transparent;
 			border: 1px solid $white;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background: transparent;
+				border: 1px solid $primary-color;
+				opacity: 1;
+				transition: border 0.25s ease-in-out;
+			}
 		} // &--clear
 	} // &__button
 
